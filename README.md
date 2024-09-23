@@ -77,4 +77,4 @@ ggplot(monthly_trends, aes(x = as.Date(month_year, "%Y-%m"), y = bookings)) +
 
 ## Course
 
-For analysis under the course: [Course Name], under the supervision of [Instructor Name].
+For course: DEPI under the supervision of eng. Soha Nagy.
