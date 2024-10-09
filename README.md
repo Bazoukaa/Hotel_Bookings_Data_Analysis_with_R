@@ -1,80 +1,95 @@
 
 # Hotel Bookings Data Analysis
 
-This repository contains an R script for performing a comprehensive data analysis of hotel bookings, utilizing various data visualization techniques. The analysis explores trends, average daily rates, reservation statuses, and customer behavior through different chart types. The visualizations are built using popular R packages such as `ggplot2`, `dplyr`, `treemap`, and `plotly`.
+This repository contains an analysis of hotel bookings data using R. The analysis includes visualizations created using various R libraries to explore different trends, patterns, and distributions related to hotel bookings.
 
-## Problem Statement
+## Dataset
 
-The dataset consists of hotel booking records, including details such as booking dates, hotel type, customer type, and average daily rate (ADR). The goal is to derive meaningful insights from the data through various visualizations:
+The dataset used in this analysis is `hotel_bookings.csv`, which contains information about hotel bookings, such as hotel type, booking cancellation status, lead time, and average daily rates (ADR). The dataset is loaded directly in the R script and cleaned to handle missing values.
 
-1. **Monthly booking trends by year** to examine the seasonality and patterns.
-2. **Average daily rate (ADR) by customer type** to understand how different customer segments are charged.
-3. **Reservation statuses** distribution to identify the proportion of cancellations, checkouts, etc.
-4. **Boxplot of ADR by hotel type** to show the spread and distribution of prices for different hotel types.
-5. **Sunburst chart** to explore relationships between hotels, meals, and customer types.
-6. **Treemap of top 10 countries by ADR** to visualize the average daily rates for countries with the highest rates.
+## Libraries Used
 
-## Dependencies
+The following R libraries are required to run the analysis:
 
-Make sure the following packages are installed in your R environment:
+- **ggplot2**: For creating elegant data visualizations.
+- **dplyr**: For data manipulation.
+- **treemap**: For creating treemap visualizations.
+- **plotly**: For adding interactivity to the plots.
 
-- **ggplot2**
-- **dplyr**
-- **treemap**
-- **scales**
-- **plotly**
-- **treemapify**
+## Data Cleaning
 
-To install these dependencies, run the following command in your R console:
+Before starting the analysis, we perform some basic data cleaning:
 
-```r
-install.packages(c("ggplot2", "dplyr", "treemap", "scales", "plotly", "treemapify"))
-```
-
-## How to Run
-
-1. Load the dataset into R:
-
-```r
-data <- read.csv("hotel_bookings.csv")
-```
-
-2. Ensure that the required R packages are installed.
-3. Run the script to generate the visualizations described below.
+- Missing values in the `agent` and `company` columns are replaced with `0`.
 
 ## Visualizations
 
-1. **Monthly Booking Trends by Year (Line Chart)**: 
-   - Visualizes booking trends by month and year, allowing you to analyze seasonality.
-   
-2. **Average Daily Rate by Customer Type (Bar Chart)**:
-   - Compares the average daily rate (ADR) for different customer types, providing insights into pricing strategies.
+Below is a list of the visualizations included in this analysis:
 
-3. **Reservation Statuses (Pie Chart)**:
-   - Displays the breakdown of different reservation statuses (e.g., canceled, checked-out) as a pie chart.
+### 1. **Cancellation Rate by Hotel Type**
+   - A bar plot that shows the number of canceled and non-canceled bookings for each hotel type (City Hotel or Resort Hotel).
+   - **Plot type**: Bar Plot (Grouped)
+   - **Libraries used**: ggplot2, dplyr
 
-4. **ADR Distribution by Hotel Type (Box Plot)**:
-   - Shows the spread and distribution of ADR values for resort and city hotels.
+### 2. **Distribution of Market Segments**
+   - A treemap that visualizes the distribution of bookings across different market segments.
+   - **Plot type**: Treemap
+   - **Libraries used**: treemap, dplyr
 
-5. **Sunburst Chart (Hotel -> Meal -> Customer Type)**:
-   - An interactive sunburst chart illustrating the hierarchical relationship between hotel type, meal type, and customer type.
+### 3. **Average ADR by Customer Type**
+   - A bar plot that shows the average ADR (Average Daily Rate) for different customer types.
+   - **Plot type**: Bar Plot
+   - **Libraries used**: ggplot2, dplyr
 
-6. **Treemap of Top 10 Countries by ADR**:
-   - A treemap visualizing the average daily rates for the top 10 countries, based on ADR.
+### 4. **Lead Time Distribution**
+   - A histogram that displays the distribution of lead times (number of days between booking and arrival).
+   - **Plot type**: Histogram
+   - **Libraries used**: ggplot2
 
-## To Run the Analysis
+### 5. **Booking Changes Distribution**
+   - A bar plot that shows the distribution of booking changes.
+   - **Plot type**: Bar Plot
+   - **Libraries used**: ggplot2
 
-Execute the following commands in your R environment to generate the respective charts. Each visualization is ready to be plotted based on the data provided in `hotel_bookings.csv`.
+### 6. **Proportion of Cancellations by Market Segment**
+   - A stacked bar plot that displays the proportion of cancellations for each market segment.
+   - **Plot type**: Stacked Bar Plot (Proportion)
+   - **Libraries used**: ggplot2, dplyr
 
-For example, to generate the line chart for monthly booking trends:
+### 7. **Average Lead Time by Customer Type**
+   - A bar plot showing the average lead time for each customer type.
+   - **Plot type**: Bar Plot
+   - **Libraries used**: ggplot2, dplyr
 
-```r
-ggplot(monthly_trends, aes(x = as.Date(month_year, "%Y-%m"), y = bookings)) +
-  geom_line(color = "blue") +
-  labs(title = "Monthly Booking Trends", x = "Month", y = "Number of Bookings") +
-  theme_minimal()
-```
+### 8. **ADR Trend Over Time**
+   - A line plot showing the trend of ADR (Average Daily Rate) over time.
+   - **Plot type**: Line Plot with Points
+   - **Libraries used**: ggplot2, dplyr
 
-## Course
+## How to Run
 
-For course: DEPI under the supervision of eng. Soha Nagy.
+1. Ensure you have the required libraries installed. You can install the necessary packages by running:
+
+   ```R
+   install.packages(c("ggplot2", "dplyr", "treemap", "plotly"))
+   ```
+
+2. Load the dataset (`hotel_bookings.csv`) into your working directory.
+
+3. Run the R script (`hotel_bookings_analysis.R`) to generate the visualizations. The script will load the data, clean it, and generate the above-mentioned plots.
+
+## Requirements
+
+- R (version 3.6 or higher)
+- ggplot2
+- dplyr
+- treemap
+- plotly
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+## Author
+
+This analysis was created by [Your Name]. Feel free to reach out with any questions or suggestions.
