@@ -86,10 +86,7 @@ Below is a list of the visualizations included in this analysis:
 - treemap
 - plotly
 
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
 
 ## Author
 
-This analysis was created by [Your Name]. Feel free to reach out with any questions or suggestions.
+This analysis was created by [Mohamed El-Baz]. Feel free to reach out with any questions or suggestions.
